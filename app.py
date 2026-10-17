@@ -60,11 +60,10 @@ header[data-testid="stHeader"],footer,#MainMenu,[data-testid="stToolbar"],[data-
 .tl div{opacity:0;transform:translateY(6px);animation:in .5s forwards}
 .tl .k{color:var(--c)}.tl .p{color:var(--b)}.tl .m{color:var(--mute)}
 @keyframes in{to{opacity:1;transform:none}}
-.side{position:relative;padding-bottom:70px}
-.portrait{position:relative;width:78%;margin-left:auto;aspect-ratio:4/5;border-radius:26px;overflow:hidden;border:1px solid var(--line);box-shadow:0 30px 80px -30px rgba(124,108,255,.6)}
+.hero .trace{margin-top:34px;max-width:540px}
+.portrait{position:relative;width:100%;aspect-ratio:4/5;border-radius:26px;overflow:hidden;border:1px solid var(--line);box-shadow:0 30px 80px -30px rgba(124,108,255,.6)}
 .portrait img{width:100%;height:100%;object-fit:cover;object-position:50% 12%;display:block}
-.portrait:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(13,15,31,.6))}
-.side .trace{position:absolute;left:0;bottom:0;width:80%;backdrop-filter:blur(10px)}
+.portrait:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 70%,rgba(13,15,31,.45))}
 .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));border:1px solid var(--line);border-radius:18px;
  background:var(--glass);margin:36px 0 12px}
 .stat{padding:26px 24px;border-right:1px solid var(--line)}
@@ -107,7 +106,7 @@ header[data-testid="stHeader"],footer,#MainMenu,[data-testid="stToolbar"],[data-
 .contact .cta{justify-content:center}
 .foot{text-align:center;color:var(--mute);font-size:.82rem;padding:34px 0 0}
 a:focus-visible{outline:2px solid var(--c);outline-offset:3px;border-radius:8px}
-@media(max-width:900px){.side{padding-bottom:0}.portrait{width:100%;aspect-ratio:1}.side .trace{position:static;width:100%;margin-top:16px}.hero,.story{grid-template-columns:1fr}.proj.big{grid-column:auto}.nav .links{display:none}
+@media(max-width:900px){.side{order:-1}.portrait{max-width:380px;aspect-ratio:1}.hero,.story{grid-template-columns:1fr}.proj.big{grid-column:auto}.nav .links{display:none}
  .stat{border-right:0;border-bottom:1px solid var(--line)}.contact{padding:44px 22px}.grid{grid-template-columns:1fr}}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.tl div{opacity:1;transform:none}}
 </style>
@@ -146,8 +145,9 @@ hero = (
     'agentic-AI frameworks, Agentic RAG, AI chatbots and AI automation.</p>'
     f'<div class="cta"><a class="btn pri" href="{LINKS["email"]}">Email me</a>'
     f'<a class="btn" href="{LINKS["github"]}" target="_blank">GitHub</a>'
-    f'<a class="btn" href="{LINKS["linkedin"]}" target="_blank">LinkedIn</a></div></div>'
-    f'<div class="side"><div class="portrait"><img src="data:image/jpeg;base64,{PHOTO}" alt="Portrait of Vijaylal Bussa"></div>{trace}</div></div>'
+    f'<a class="btn" href="{LINKS["linkedin"]}" target="_blank">LinkedIn</a></div>'
+    f'{trace}</div>'
+    f'<div class="side"><div class="portrait"><img src="data:image/jpeg;base64,{PHOTO}" alt="Portrait of Vijaylal Bussa"></div></div></div>'
 )
 
 stats = ('<div class="stats">'
