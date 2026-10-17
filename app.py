@@ -28,13 +28,14 @@ header[data-testid="stHeader"],footer,#MainMenu,[data-testid="stToolbar"],[data-
 .block-container{max-width:1120px!important;padding:0 1.5rem 3rem!important}
 .pf *{box-sizing:border-box}
 .pf a{color:inherit;text-decoration:none}
-.pf h1,.pf h2,.pf h3,.pf p{margin:0}
-.nav{position:sticky;top:0;z-index:50;display:flex;justify-content:space-between;align-items:center;padding:16px 0;
- backdrop-filter:blur(14px);background:linear-gradient(var(--bg) 40%,transparent)}
+.pf :where(h1,h2,h3,p){margin:0}
+.nav{position:sticky;top:12px;z-index:50;display:flex;justify-content:space-between;align-items:center;padding:12px 22px;margin-top:14px;
+ border:1px solid var(--line);border-radius:16px;backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);background:rgba(13,15,31,.6)}
 .logo{font:800 1.15rem 'Bricolage Grotesque';letter-spacing:-.02em}
 .nav .links{display:flex;gap:22px;font-size:.92rem;color:var(--mute)}
 .nav .links a:hover{color:var(--ink)}
-.hero{display:grid;grid-template-columns:1.25fr 1fr;gap:48px;align-items:center;padding:64px 0 40px}
+.hero{display:grid;grid-template-columns:1.25fr 1fr;gap:48px;align-items:start;padding:56px 0 40px}
+.hero>div:first-child{padding-top:36px}
 .status{display:inline-flex;gap:10px;align-items:center;padding:7px 14px;border:1px solid var(--line);border-radius:99px;
  background:var(--glass);font-size:.85rem;color:var(--mute)}
 .dot{width:8px;height:8px;border-radius:50%;background:var(--c);box-shadow:0 0 0 0 rgba(61,224,197,.6);animation:pulse 2s infinite}
