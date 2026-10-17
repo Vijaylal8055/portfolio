@@ -34,8 +34,8 @@ header[data-testid="stHeader"],footer,#MainMenu,[data-testid="stToolbar"],[data-
 .logo{font:800 1.15rem 'Bricolage Grotesque';letter-spacing:-.02em}
 .nav .links{display:flex;gap:22px;font-size:.92rem;color:var(--mute)}
 .nav .links a:hover{color:var(--ink)}
-.hero{display:grid;grid-template-columns:1.25fr 1fr;gap:48px;align-items:start;padding:56px 0 40px}
-.hero>div:first-child{padding-top:36px}
+.hero{display:grid;grid-template-columns:1.25fr 1fr;gap:48px;align-items:center;padding:56px 0 40px}
+.title{font:600 1.2rem 'Bricolage Grotesque';color:var(--c);margin-bottom:14px}
 .status{display:inline-flex;gap:10px;align-items:center;padding:7px 14px;border:1px solid var(--line);border-radius:99px;
  background:var(--glass);font-size:.85rem;color:var(--mute)}
 .dot{width:8px;height:8px;border-radius:50%;background:var(--c);box-shadow:0 0 0 0 rgba(61,224,197,.6);animation:pulse 2s infinite}
@@ -46,21 +46,15 @@ header[data-testid="stHeader"],footer,#MainMenu,[data-testid="stToolbar"],[data-
 @keyframes sheen{to{background-position:100% 0}}
 .role{font:500 1.35rem/1.35 'Bricolage Grotesque';color:var(--ink);max-width:30ch}
 .lede{color:var(--mute);line-height:1.65;max-width:52ch;margin-top:14px}
+.aboutme{margin-top:26px;max-width:54ch}
+.aboutme h3{font:700 1.1rem 'Bricolage Grotesque';margin-bottom:6px}
+.aboutme p{color:var(--mute);line-height:1.65;font-size:.95rem}
 .cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
 .btn{padding:12px 22px;border-radius:12px;font-weight:600;border:1px solid var(--line);background:var(--glass);transition:.2s}
 .btn:hover{border-color:var(--a);transform:translateY(-2px)}
 .btn.pri{background:linear-gradient(120deg,var(--a),#A06BFF 50%,var(--b));border:0;color:#fff;box-shadow:0 10px 30px -10px var(--a)}
-.trace{border:1px solid var(--line);border-radius:18px;background:rgba(10,12,28,.75);overflow:hidden;
  box-shadow:0 30px 80px -30px rgba(124,108,255,.55)}
-.trace .bar{display:flex;align-items:center;gap:7px;padding:12px 16px;border-bottom:1px solid var(--line);
  font:400 .74rem 'JetBrains Mono';color:var(--mute)}
-.trace .bar i{width:10px;height:10px;border-radius:50%;background:#3a3d5a;display:block}
-.trace .bar span{margin-left:auto}
-.tl{padding:18px 18px 22px;font:400 .8rem/1.9 'JetBrains Mono';color:#C8CBE6}
-.tl div{opacity:0;transform:translateY(6px);animation:in .5s forwards}
-.tl .k{color:var(--c)}.tl .p{color:var(--b)}.tl .m{color:var(--mute)}
-@keyframes in{to{opacity:1;transform:none}}
-.hero .trace{margin-top:34px;max-width:540px}
 .portrait{position:relative;width:100%;aspect-ratio:4/5;border-radius:26px;overflow:hidden;border:1px solid var(--line);box-shadow:0 30px 80px -30px rgba(124,108,255,.6)}
 .portrait img{width:100%;height:100%;object-fit:cover;object-position:50% 12%;display:block}
 .portrait:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 70%,rgba(13,15,31,.45))}
@@ -77,7 +71,6 @@ header[data-testid="stHeader"],footer,#MainMenu,[data-testid="stToolbar"],[data-
 .card{border:1px solid var(--line);background:var(--glass);border-radius:18px;padding:26px}
 .card p{color:var(--mute);line-height:1.7}
 .card h3{font:700 1.25rem 'Bricolage Grotesque';margin-bottom:10px}
-.tlw{position:relative;margin-left:8px;padding-left:34px;border-left:1px solid var(--line)}
 .job{position:relative;padding-bottom:34px}
 .job:before{content:"";position:absolute;left:-41px;top:7px;width:14px;height:14px;border-radius:50%;background:var(--bg);
  border:2px solid var(--a)}
@@ -127,26 +120,20 @@ nav = ('<div class="nav"><div class="logo">VB</div><div class="links">'
        '<a href="#about">About</a><a href="#experience">Experience</a><a href="#projects">Projects</a>'
        '<a href="#skills">Skills</a><a href="#contact">Contact</a></div></div>')
 
-trace_lines = [
-    ('<span class="m">$</span> master_agent.route(<span class="p">"explain gradient descent"</span>)', 0.4),
-    ('<span class="k">→</span> coach_agent <span class="m">learner profile loaded</span>', 1.2),
-    ('<span class="k">→</span> professor_ml <span class="m">pgvector top-k=5</span>', 2.0),
-    ('<span class="k">→</span> observability <span class="m">trace logged, cost tracked</span>', 2.8),
-    ('<span class="k">✓</span> streamed to student <span class="m">under 2 s</span>', 3.6),
-]
-trace = ('<div class="trace"><div class="bar"><i></i><i></i><i></i><span>multi-agent system · illustrative trace</span></div><div class="tl">'
-         + "".join(f'<div style="animation-delay:{d}s">{t}</div>' for t, d in trace_lines) + "</div></div>")
-
 hero = (
     '<div class="hero"><div>'
     '<h1 class="name">Vijaylal Bussa</h1>'
+    '<p class="title">AI Developer &amp; Generative AI Specialist</p>'
     '<p class="role">I build multi-agent AI systems that hold up in production.</p>'
     '<p class="lede">Forward Deployed AI Engineer and AI Data Scientist specializing in production-grade multi-agent AI, '
     'agentic-AI frameworks, Agentic RAG, AI chatbots and AI automation.</p>'
+    '<div class="aboutme"><h3>About me</h3><p>I am an AI developer with 3+ years of hands-on experience building agentic and generative AI systems: '
+    'multi-agent workflows, Agentic RAG pipelines, document intelligence and LLM applications. I work directly with clients and teams '
+    'to take models from prototype to production, focusing on results that are fast, reliable and measurable.</p></div>'
     f'<div class="cta"><a class="btn pri" href="{LINKS["email"]}">Email me</a>'
     f'<a class="btn" href="{LINKS["github"]}" target="_blank">GitHub</a>'
     f'<a class="btn" href="{LINKS["linkedin"]}" target="_blank">LinkedIn</a></div>'
-    f'{trace}</div>'
+    '</div>'
     f'<div class="side"><div class="portrait"><img src="data:image/jpeg;base64,{PHOTO}" alt="Portrait of Vijaylal Bussa"></div></div></div>'
 )
 
@@ -168,7 +155,7 @@ about = (
 experience = (
     '<div class="sec" id="experience"><h2>Experience</h2><p class="sub">Most recent first.</p><div class="tlw">'
     + job("AI Developer", "Independent Contractor, Remote", "Aug 2026 – Present", [
-        "Built <b>Squatch Signal</b>, a Python pipeline that turns company websites into evidence-backed leads with an explainable 0–100 ICP score.",
+        "Built the <b>Squatch Signal Lead Generation Pipeline</b>, a Python pipeline that turns company websites into evidence-backed leads with an explainable 0–100 ICP score.",
         "Wrote a robots.txt-compliant crawler with SSRF protection, parallel workers, TTL caching and MX email validation; 21 offline tests.",
         "Designed a Supabase PostgreSQL backend with auth and row-level security; deployed on Streamlit Community Cloud with CD from GitHub.",
     ], now=True)
@@ -197,7 +184,7 @@ projects = (
     '<div class="sec" id="projects"><h2>Selected work</h2><p class="sub">Production systems first, experiments after.</p><div class="grid">'
     + project("BTU Virtual University", "A multi-agent learning platform. A master agent routes each question, a coach agent tracks the learner, and ten professor agents answer from a shared knowledge base.",
               "500+ sessions · 99.5% uptime · &lt;2s answers", ["Multi-agent AI", "Agentic RAG", "pgvector", "LLM observability", "Voice"], big=True)
-    + project("Squatch Signal", "Paste a website, get a scored prospect with ranked emails, phone, LinkedIn and buying signals such as hiring or funding.",
+    + project("Squatch Signal: Lead Generation Pipeline", "Paste a website, get a scored prospect with ranked emails, phone, LinkedIn and buying signals such as hiring or funding.",
               "0–100 explainable ICP score", ["Python", "Streamlit", "Supabase", "RLS", "Web crawling"])
     + project("AI Avatar Generator", "Stable Diffusion and ControlNet pipeline with an optimized inference path.",
               "40% faster creation · 30% lower latency", ["Stable Diffusion", "ONNX", "TensorRT"])
