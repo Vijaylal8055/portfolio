@@ -58,12 +58,7 @@ header[data-testid="stHeader"],footer,#MainMenu,[data-testid="stToolbar"],[data-
 .portrait{position:relative;width:100%;aspect-ratio:4/5;border-radius:26px;overflow:hidden;border:1px solid var(--line);box-shadow:0 30px 80px -30px rgba(124,108,255,.6)}
 .portrait img{width:100%;height:100%;object-fit:cover;object-position:50% 12%;display:block}
 .portrait:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 70%,rgba(13,15,31,.45))}
-.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));border:1px solid var(--line);border-radius:18px;
  background:var(--glass);margin:36px 0 12px}
-.stat{padding:26px 24px;border-right:1px solid var(--line)}
-.stat:last-child{border:0}
-.stat b{display:block;font:800 2.5rem 'Bricolage Grotesque';letter-spacing:-.03em}
-.stat span{color:var(--mute);font-size:.9rem}
 .sec{padding-top:84px}
 .sec h2{font:800 clamp(2rem,4vw,3rem)/1.05 'Bricolage Grotesque';letter-spacing:-.035em;margin-bottom:10px}
 .sec .sub{color:var(--mute);max-width:60ch;line-height:1.65;margin-bottom:34px}
@@ -100,7 +95,7 @@ header[data-testid="stHeader"],footer,#MainMenu,[data-testid="stToolbar"],[data-
 .foot{text-align:center;color:var(--mute);font-size:.82rem;padding:34px 0 0}
 a:focus-visible{outline:2px solid var(--c);outline-offset:3px;border-radius:8px}
 @media(max-width:900px){.side{order:-1}.portrait{max-width:380px;aspect-ratio:1}.hero,.story{grid-template-columns:1fr}.proj.big{grid-column:auto}.nav .links{display:none}
- .stat{border-right:0;border-bottom:1px solid var(--line)}.contact{padding:44px 22px}.grid{grid-template-columns:1fr}}
+ .contact{padding:44px 22px}.grid{grid-template-columns:1fr}}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.tl div{opacity:1;transform:none}}
 </style>
 """
@@ -136,12 +131,6 @@ hero = (
     '</div>'
     f'<div class="side"><div class="portrait"><img src="data:image/jpeg;base64,{PHOTO}" alt="Portrait of Vijaylal Bussa"></div></div></div>'
 )
-
-stats = ('<div class="stats">'
-         '<div class="stat"><b>500+</b><span>concurrent student sessions served</span></div>'
-         '<div class="stat"><b>&lt;2s</b><span>RAG response time across 11 agents</span></div>'
-         '<div class="stat"><b>99.5%</b><span>production uptime</span></div>'
-         '<div class="stat"><b>15+</b><span>AI/ML projects shipped end to end</span></div></div>')
 
 about = (
     '<div class="sec" id="about"><h2>What I build</h2>'
@@ -224,4 +213,4 @@ contact = (
 )
 
 st.markdown(CSS, unsafe_allow_html=True)
-st.markdown('<div class="pf">' + nav + hero + stats + about + experience + projects + skills + contact + "</div>", unsafe_allow_html=True)
+st.markdown('<div class="pf">' + nav + hero + about + experience + projects + skills + contact + "</div>", unsafe_allow_html=True)
