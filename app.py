@@ -51,7 +51,8 @@ header[data-testid="stHeader"],footer,#MainMenu,[data-testid="stToolbar"],[data-
 .aboutme p{color:var(--mute);line-height:1.65;font-size:.95rem}
 .cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
 .btn{padding:12px 22px;border-radius:12px;font-weight:600;border:1px solid var(--line);background:var(--glass);transition:.2s}
-.btn:hover{border-color:var(--a);transform:translateY(-2px)}
+.btn:hover{border-color:var(--a);box-shadow:0 10px 26px -14px var(--a)}
+.btn,.cta,.contact{position:relative;z-index:2;cursor:pointer}
 .btn.pri{background:linear-gradient(120deg,var(--a),#A06BFF 50%,var(--b));border:0;color:#fff;box-shadow:0 10px 30px -10px var(--a)}
  box-shadow:0 30px 80px -30px rgba(124,108,255,.55)}
  font:400 .74rem 'JetBrains Mono';color:var(--mute)}
@@ -126,8 +127,8 @@ hero = (
     'multi-agent workflows, Agentic RAG pipelines, document intelligence and LLM applications. I work directly with clients and teams '
     'to take models from prototype to production, focusing on results that are fast, reliable and measurable.</p></div>'
     f'<div class="cta"><a class="btn pri" href="{LINKS["email"]}">Email me</a>'
-    f'<a class="btn" href="{LINKS["github"]}" target="_blank">GitHub</a>'
-    f'<a class="btn" href="{LINKS["linkedin"]}" target="_blank">LinkedIn</a></div>'
+    f'<a class="btn" href="{LINKS["github"]}" target="_blank" rel="noopener noreferrer">GitHub</a>'
+    f'<a class="btn" href="{LINKS["linkedin"]}" target="_blank" rel="noopener noreferrer">LinkedIn</a></div>'
     '</div>'
     f'<div class="side"><div class="portrait"><img src="data:image/jpeg;base64,{PHOTO}" alt="Portrait of Vijaylal Bussa"></div></div></div>'
 )
@@ -200,15 +201,15 @@ skills = ('<div class="sec" id="skills"><h2>Skills and credentials</h2><p class=
           + chips(["IBM: Generative AI in Action", "IBM: Machine Learning & Deep Learning", "IBM: NLP & Computer Vision", "IBM: Data Science L1 & L2",
                    "AWS Cloud Practitioner Essentials", "Azure Services Fundamentals", "Google Cloud: Generative AI Studio",
                    "Quantum Computing (WISER / Qubitech)", "Pro5ai Top 5%"]) + "</div>"
-          f'<a class="btn" href="{LINKS["credly"]}" target="_blank">View badges on Credly</a></div>')
+          f'<a class="btn" href="{LINKS["credly"]}" target="_blank" rel="noopener noreferrer">View badges on Credly</a></div>')
 
 contact = (
     '<div class="contact" id="contact"><h2>Have an agent to ship?</h2>'
     '<p>Available for remote roles and contract work, starting immediately. Based in Vijayawada, India.</p>'
     f'<div class="cta"><a class="btn pri" href="{LINKS["email"]}">vijaylalbussa@gmail.com</a>'
-    f'<a class="btn" href="{LINKS["linkedin"]}" target="_blank">LinkedIn</a>'
-    f'<a class="btn" href="{LINKS["github"]}" target="_blank">GitHub</a>'
-    f'<a class="btn" href="{LINKS["credly"]}" target="_blank">Credly</a></div></div>'
+    f'<a class="btn" href="{LINKS["linkedin"]}" target="_blank" rel="noopener noreferrer">LinkedIn</a>'
+    f'<a class="btn" href="{LINKS["github"]}" target="_blank" rel="noopener noreferrer">GitHub</a>'
+    f'<a class="btn" href="{LINKS["credly"]}" target="_blank" rel="noopener noreferrer">Credly</a></div></div>'
     '<div class="foot">Built with Python and Streamlit</div>'
 )
 
